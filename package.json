@@ -1,0 +1,21 @@
+{
+  "name": "@brandious/memory-cards",
+  "version": "1.0.0",
+  "description": "Game of memories based on TS",
+  "main": "index.js",
+  "repository": "https://github.com/Brandious/MemoryCards.git",
+  "author": "Brandious",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "workspaces/*"
+    ]
+  },
+  "scripts": {
+    "start:dev:client": "yarn workspace @memory-cards/client start:dev",
+    "start:dev:server": "yarn workspace @memory-cards/server start:dev",
+    "start:prod:client": "yarn workspace @memory-cards/client start:prod",
+    "start:prod:server": "yarn workspace @memory-cards/server start:prod"
+  }
+}
