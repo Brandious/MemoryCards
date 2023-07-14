@@ -5,8 +5,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { RecoilRoot } from "recoil";
 import { SocketManagerProvider } from "../components/websocket/SocketManagerProvider";
-import { MantineProvider } from "@mantine/core";
-import { Notifications } from "@mantine/notifications";
+
 const inter = Inter({ subsets: ["latin"] });
 
 //

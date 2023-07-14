@@ -11,10 +11,9 @@ import { CurrentLobbyState } from "./states";
 
 function GameManager() {
   const router = useRouter();
-  //   const searchParams = useSearchParams();
+  const searchParams = useSearchParams();
   const { sm } = useSocketManager();
   const [lobbyState, setLobbyState] = useRecoilState(CurrentLobbyState);
-  console.log(lobbyState, CurrentLobbyState);
 
   useEffect(() => {
     sm.connect();
@@ -23,9 +22,9 @@ function GameManager() {
       ServerPayloads[ServerEvents.LobbyState]
     > = async (data) => {
       setLobbyState(data);
-
+      console.log(searchParams);
       //   useSearchParams().lobby = data.lobbyId;
-      console.log(data.lobbyId);
+      console.log(data);
       router.push(`/?${data.lobbyId}`);
     };
 

@@ -12,8 +12,18 @@ function Introduction() {
 
   const [delayBetweenRounds, setDelayBetweenRounds] = React.useState(2);
 
+  console.log(searchParams);
+
   useEffect(() => {
-    console.log(searchParams);
+    if (searchParams.has("lobby"))
+      sm.emit({
+        event: ClientEvents.LobbyJoin,
+        data: {
+          lobbyId: searchParams.get("lobby")!,
+        },
+      });
+    //  no exhaustive deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   const onCreateLobby = (mode: "solo" | "duo") => {
