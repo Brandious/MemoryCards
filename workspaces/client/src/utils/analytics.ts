@@ -9,5 +9,3 @@
 //   // @ts-ignore
 //   window.gtag("event", event);
 // };
-
-console.log("Here");
