@@ -1,9 +1,9 @@
-import { ServerEvents } from "../../../../shared/server/ServerEvents";
+import { ServerEvents } from "@memory-cards/shared/server/ServerEvents";
 
-import { ServerExceptionResponse } from "../../../../shared/server/types";
+import { ServerExceptionResponse } from "@memory-cards/shared/server/types";
 // import { ServerEvents } from "@shared/server/ServerEvents";
 import { SetterOrUpdater } from "recoil";
-import { ClientEvents } from "../../../../shared/client/ClientEvents";
+import { ClientEvents } from "@memory-cards/shared/client/ClientEvents";
 import { SocketState } from "./SocketState";
 import { io, Socket } from "socket.io-client";
 import { Listener } from "./types";
