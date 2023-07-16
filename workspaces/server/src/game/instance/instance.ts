@@ -63,7 +63,6 @@ export class Instance {
   public revealCard(cardIndex: number, client: AuthenticatedSocket): void {
     if (this.isSuspended || this.hasFinished || !this.hasStarted) return;
 
-    console.log(cardIndex, client);
     let cardAlreadyRevealedCount = 0;
 
     for (const clientId of Object.values(this.cardsRevealedForCurrentRound)) {
@@ -72,11 +71,10 @@ export class Instance {
       }
     }
 
-    console.log('CARDALREADY', cardAlreadyRevealedCount);
     if (cardAlreadyRevealedCount >= 2) return;
 
     const cardState = this.cards[cardIndex];
-    console.log(cardState);
+
     if (!cardState)
       throw new ServerException(
         SocketExceptions.GameError,
@@ -136,15 +134,10 @@ export class Instance {
 
         const previousCard = cardsRevealed.get(cardState.card);
 
-        console.log(
-          'piar->',
-          cardsRevealed,
-          previousCard && previousCard.ownerId === cardState.ownerId,
-        );
         if (previousCard && previousCard.ownerId === cardState.ownerId) {
           previousCard.isLocked = true;
           cardState.isLocked = true;
-          console.log('HERE ->', cardState);
+
           // ignore forbiden non-null assertion
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           this.scores[cardState.ownerId!] =
@@ -152,10 +145,9 @@ export class Instance {
             (this.scores[cardState.ownerId!] || 0) + 1;
         }
 
-        console.log('cardState.card', cardState.card);
         cardsRevealed.set(cardState.card, cardState);
       }
-      console.log(cardsRevealed);
+
       let everyCardLocked = true;
 
       for (const cardState of this.cards) {
@@ -184,7 +176,7 @@ export class Instance {
       this.cards.push(cardState1);
       this.cards.push(cardState2);
     }
-    console.log(this.cards);
-    this.cards = this.cards.sort((a, b) => 0.5 - Math.random());
+
+    this.cards = this.cards.sort(() => 0.5 - Math.random());
   }
 }
