@@ -6,9 +6,9 @@ import { CardState } from './card-state';
 import { Lobby } from '../lobby/lobby';
 import { AuthenticatedSocket } from '../game/types';
 import { SECOND } from '../constants';
-import { ServerPayloads } from '../../../../shared/server/ServerPayloads';
-import { ServerEvents } from '../../../../shared/server/ServerEvents';
-import { SocketExceptions } from '../../../../shared/server/SocketExceptions';
+import { ServerPayloads } from '@shared/server/ServerPayloads';
+import { ServerEvents } from '@shared/server/ServerEvents';
+import { SocketExceptions } from '@shared/server/SocketExceptions';
 
 export class Instance {
   public hasStarted = false;

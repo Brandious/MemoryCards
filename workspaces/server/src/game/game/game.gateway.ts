@@ -13,9 +13,9 @@ import { WsValidationPipe } from '../../websocket/ws.validation-pipe';
 import { LobbyManager } from '../lobby/lobby.manager';
 import { AuthenticatedSocket } from './types';
 import { LobbyCreateDto, LobbyJoinDto, RevealCardDto } from './dto';
-import { ServerEvents } from '../../../../shared/server/ServerEvents';
+import { ServerEvents } from '@shared/server/ServerEvents';
 import { ServerException } from '../server.exception';
-import { SocketExceptions } from '../../../../shared/server/SocketExceptions';
+import { SocketExceptions } from '@shared/server/SocketExceptions';
 
 @UsePipes(new WsValidationPipe())
 @WebSocketGateway()

@@ -1,5 +1,6 @@
+import { Cards } from '@shared/common/Cards';
 import { IsInt, IsNumber, IsString, Max, Min } from 'class-validator';
-import { Cards } from '../../../../shared/common/Cards';
+// import { Cards } from '../../../../shared/common/Cards';
 
 export class LobbyCreateDto {
   @IsString()

@@ -2,8 +2,8 @@ import { Socket, Server } from 'socket.io';
 import { v4 } from 'uuid';
 import { AuthenticatedSocket } from '../game/types';
 import { Instance } from '../instance/instance';
-import { ServerPayloads } from '../../../../shared/server/ServerPayloads';
-import { ServerEvents } from '../../../../shared/server/ServerEvents';
+import { ServerPayloads } from '@shared/server/ServerPayloads';
+import { ServerEvents } from '@shared/server/ServerEvents';
 // import { ServerEvents, ServerPayloads } from '././game/game.gateway';
 
 export class Lobby {

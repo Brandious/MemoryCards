@@ -7,8 +7,8 @@ import { Lobby } from './lobby';
 import { AuthenticatedSocket } from '../game/types';
 import { LobbyMode } from './types';
 import { LOBBY_MAX_LIFETIME, MAX_CLIENTS } from '../constants';
-import { ServerEvents } from '../../../../shared/server/ServerEvents';
-import { ServerPayloads } from '../../../../shared/server/ServerPayloads';
+import { ServerEvents } from '@shared/server/ServerEvents';
+import { ServerPayloads } from '@shared/server/ServerPayloads';
 
 export class LobbyManager {
   public server: Server;
