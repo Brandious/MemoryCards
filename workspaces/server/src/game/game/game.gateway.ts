@@ -1,5 +1,5 @@
-import { ServerPayloads } from './../../../../shared/server/ServerPayloads';
-import { ClientEvents } from './../../../../shared/client/ClientEvents';
+import { ServerPayloads } from '@shared/server/ServerPayloads';
+import { ClientEvents } from '@shared/client/ClientEvents';
 import { Logger, UsePipes } from '@nestjs/common';
 import {
   OnGatewayConnection,

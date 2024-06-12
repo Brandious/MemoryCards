@@ -22,11 +22,9 @@ export default class SocketManager {
   private connectionLost: boolean = false;
 
   constructor() {
-    console.log(process.env.NEXT_PUBLIC_WS_API_URL);
-
     this.socket = io(process.env.NEXT_PUBLIC_WS_API_URL as string, {
       autoConnect: false,
-      path: "/socket.io",
+      path: "/wsapi",
       transports: ["websocket"],
       withCredentials: true,
     });
